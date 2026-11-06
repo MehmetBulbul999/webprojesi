@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyson.AI</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body> 
+
+<header class="header">
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="logo" />
+    </a>
+    <nav class="navbar">
+        <a href="#" id="tab-duzeltici" class="nav-link active" onclick="switchTab('duzeltici')">Yazı Düzeltici</a>
+        <a href="#" id="tab-yazdirici" class="nav-link" onclick="switchTab('yazdirici')">Metin Yazdırıcı</a>
+    </nav>
+</header>
+
+<main class="main-container">
+    <div class="content-wrapper">
+        <h2 id="main-title" class="section-title">Metnini kurallara göre düzelt</h2>
+
+        <div class="editor-card">
+            <!-- Sol Seçenekler Menüsü -->
+            <aside class="options-sidebar">
+                <h3>Seçenekler</h3>
+                
+                <!-- Yazı Düzeltici Seçenekleri -->
+                <div id="options-duzeltici" class="options-group">
+                    <label><input type="radio" name="duzeltici-opt" value="yazim" checked> Yazım Kuralları</label>
+                    <label><input type="radio" name="duzeltici-opt" value="noktalama"> Noktalama İşaretleri</label>
+                    <label><input type="radio" name="duzeltici-opt" value="harf"> Büyük/Küçük Harf</label>
+                </div>
+
+                <!-- Metin Yazdırıcı Seçenekleri -->
+                <div id="options-yazdirici" class="options-group hidden">
+                    <label><input type="radio" name="yazdirici-opt" value="aciklayici" checked> Açıklayıcı Anlatım</label>
+                    <label><input type="radio" name="yazdirici-opt" value="betimleyici"> Betimleyici Anlatım</label>
+                    <label><input type="radio" name="yazdirici-opt" value="tartismaci"> Tartışmacı Anlatım</label>
+                    <label><input type="radio" name="yazdirici-opt" value="oykuleyici"> Öyküleyici Anlatım</label>
+                </div>
+            </aside>
+
+            <!-- Sağ Metin Alanı -->
+            <section class="text-container">
+                <textarea id="text-input" placeholder="Metninizi buraya yazın veya yapıştırın..."></textarea>
+                <div class="action-bar">
+                    <button class="btn-submit" id="action-btn">İşlemi Başlat</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script>
+    function switchTab(tabName) {
+        const title = document.getElementById('main-title');
+        const duzelticiTab = document.getElementById('tab-duzeltici');
+        const yazdiriciTab = document.getElementById('tab-yazdirici');
+        const duzelticiOpts = document.getElementById('options-duzeltici');
+        const yazdiriciOpts = document.getElementById('options-yazdirici');
+
+        if (tabName === 'duzeltici') {
+            duzelticiTab.classList.add('active');
+            yazdiriciTab.classList.remove('active');
+            
+            duzelticiOpts.classList.remove('hidden');
+            yazdiriciOpts.classList.add('hidden');
+            
+            title.textContent = 'Metnini kurallara göre düzelt';
+        } else if (tabName === 'yazdirici') {
+            yazdiriciTab.classList.add('active');
+            duzelticiTab.classList.remove('active');
+            
+            yazdiriciOpts.classList.remove('hidden');
+            duzelticiOpts.classList.add('hidden');
+            
+            title.textContent = 'Anlatım biçimlerine göre istediğini yaz';
+        }
+    }
+</script>
+
+</body>
+</html>
