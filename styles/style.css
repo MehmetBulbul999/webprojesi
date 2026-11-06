@@ -79,7 +79,7 @@ body {
   border-bottom: 0.3rem solid #ccc;
 }
 
-/* --- ANA İÇERİK (TAM ORTALAMA) --- */
+
 
 .main-container {
   flex: 1;
@@ -116,7 +116,7 @@ body {
   min-height: 500px;
 }
 
-/* Sol Seçenekler Paneli (Büyütüldü) */
+
 .options-sidebar {
   width: 32rem;
   background-color: #f8f9fa;
@@ -160,7 +160,7 @@ body {
   cursor: pointer;
 }
 
-/* Sağ Metin Kutusu (Büyütüldü) */
+
 .text-container {
   flex: 1;
   padding: 3rem;
@@ -213,12 +213,12 @@ body {
   transform: scale(0.98);
 }
 
-/* Yardımcı Sınıf */
+
 .hidden {
   display: none !important;
 }
 
-/* Responsive Tasarım */
+
 @media (max-width: 768px) {
   .editor-card {
     flex-direction: column;
